@@ -28,9 +28,4 @@ public class DictionaryCommandline {
         } while (option != 3);
 
     }
-
-    public static void main(String[] args) {
-        DictionaryCommandline DCL = new DictionaryCommandline();
-        DCL.dictionaryBasic();
-    }
 }
