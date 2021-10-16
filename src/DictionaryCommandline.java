@@ -13,15 +13,7 @@ public class DictionaryCommandline {
             System.out.println("3.Exit");
             option = sc1.nextInt();
             if (option == 1) {
-                boolean running = true;
-                int choice;
-                while(running) {
-                    dictionaryManagement.insertFromCommandline();
-                    System.out.println("1.Continue add new word");
-                    System.out.println("2.Back");
-                    choice = sc2.nextInt();
-                    running = (choice == 1);
-                }
+                this.dictionaryManagement.insertFromCommandline();
             } else if (option == 2) {
                 this.dictionaryManagement.ShowAllWords();
             }

@@ -28,6 +28,9 @@ public class Dictionary {
 
         }
     }
+    public void insertFromFile() {
+
+    }
 
 
 
