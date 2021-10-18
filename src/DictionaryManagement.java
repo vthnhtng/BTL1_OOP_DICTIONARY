@@ -1,6 +1,4 @@
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Files;
 import java.util.List;
 import java.util.Scanner;
@@ -30,7 +28,7 @@ public class DictionaryManagement {
     }
     public void InsertFromFile() {
         try {
-            Path path = Path.of("C:\\Users\\Admin\\Desktop\\Dictionary\\src\\Database.txt");
+            Path path = Path.of("src\\Database.txt");
             List<String> inputWordsList = Files.readAllLines(path);
             for (String word : inputWordsList) {
                 String[] wordAttribute = word.split("-");
@@ -47,7 +45,9 @@ public class DictionaryManagement {
 
     public void dictionaryLookup(){
         Scanner sc = new Scanner(System.in);
-        while(true) {
+        Scanner sc1 = new Scanner(System.in);
+        int run = 1;
+        while(run == 1) {
             System.out.println("Enter english word:");
             String search = sc.next();
             System.out.format("%-5s | %-15s | %-15s\n",
@@ -62,7 +62,32 @@ public class DictionaryManagement {
                             iter.getWord_explain());
                 }
             }
+            System.out.println("1.Continue");
+            System.out.println("2.Return");
+            run = sc1.nextInt();
         }
     }
-    //todo: khi tắt chương trình cần lưu lại list vào txt, khi mở chương trình thì tự động import file vào list để chạy hàm show words
+    public void translate() throws Exception{
+        Scanner sc = new Scanner(System.in);
+        String s = sc.next();
+        System.out.println("Enter your word:");
+        Translator.translate("en", "vi", s);
+    }
+    public void editWord() {
+        this.dictionary.edit();
+    }
+    public void deleteWord() {
+        this.dictionary.delete();
+    }
+
+    public void exportFile() throws IOException {
+        PrintWriter writer = null;
+        writer = new PrintWriter(new File("src\\TestDataBase.txt"));
+        for(Word iter : this.dictionary.wordList) {
+            writer.write(iter.getWord_target() + "-" + iter.getWord_explain() + "\n");
+        }
+        writer.flush();
+        writer.close();
+        System.out.println("Successful");
+    }
 }

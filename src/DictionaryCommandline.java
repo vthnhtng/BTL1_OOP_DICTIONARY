@@ -2,7 +2,10 @@ import java.util.Scanner;
 
 public class DictionaryCommandline {
     private DictionaryManagement dictionaryManagement = new DictionaryManagement();
-    public void dictionaryBasic() {
+    public DictionaryCommandline() {
+        this.dictionaryManagement.InsertFromFile();
+    }
+    public void dictionaryBasic() throws Exception{
         int option;
         Scanner sc = new Scanner(System.in);
         do {
@@ -20,22 +23,29 @@ public class DictionaryCommandline {
                 this.dictionaryAdvanced();
             }
         } while (option != 4);
-
+        this.dictionaryManagement.exportFile();
     }
-    public void dictionaryAdvanced() {
+    public void dictionaryAdvanced() throws Exception{
         int option;
         Scanner sc = new Scanner(System.in);
         do {
             System.out.println("Advanced option:");
             System.out.println("1.Insert from database");
             System.out.println("2.Dictionary lookup");
-            System.out.println("3.Return");
+            System.out.println("3.Translation");
+            System.out.println("4.Return");
             option = sc.nextInt();
             if (option == 1) {
                 this.dictionaryManagement.InsertFromFile();
             } else if (option == 2) {
                 this.dictionaryManagement.dictionaryLookup();
+            } else if (option == 3) {
+                this.dictionaryManagement.translate();
+            } else if (option == 5) {
+                this.dictionaryManagement.editWord();
+            } else if (option == 6) {
+                this.dictionaryManagement.deleteWord();
             }
-        } while(option != 3);
+        } while(option != 4);
     }
 }
