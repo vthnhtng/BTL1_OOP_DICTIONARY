@@ -45,6 +45,8 @@ public class DictionaryCommandline {
                 this.dictionaryManagement.editWord();
             } else if (option == 6) {
                 this.dictionaryManagement.deleteWord();
+            } else if (option == 7){
+                this.dictionaryManagement.dictionarySearcher();
             }
         } while(option != 4);
     }

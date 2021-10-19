@@ -57,11 +57,12 @@ public class Dictionary {
             if(iter.getWord_target().equals(deletion)) {
                 check = true;
                 this.wordList.remove(iter);
-                size --;
+                this.size = size-1;
+                break;
             }
         }
         if (!check) {
-            System.out.println("deo co tu day trong tu dien");
+            System.out.println("Deo co tu day trong tu dien");
         }
     }
 

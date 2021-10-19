@@ -1,6 +1,4 @@
-house-ngôi nhà
-love-yêu
-hate-ghét
-stupid-ngu ngốc
-shit-cut
-brain-occho
+love-yeu
+hate-ghet
+bad-xau
+good-tot
