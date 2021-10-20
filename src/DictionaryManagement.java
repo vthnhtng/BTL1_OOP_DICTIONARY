@@ -106,6 +106,7 @@ public class DictionaryManagement {
     public void translate() throws Exception {
         try {
             Scanner sc = new Scanner(System.in);
+            Scanner sc1 = new Scanner(System.in);
             System.out.println("Translate from: ");
             String fromLang = sc.next();
             fromLang = getLanguageFromFile(fromLang);
@@ -113,8 +114,8 @@ public class DictionaryManagement {
             String toLang = sc.next();
             toLang = getLanguageFromFile(toLang);
             System.out.println("Enter your word:");
-            String s = sc.next();
-            Translator.translate(fromLang, toLang, s);
+            String s = sc1.nextLine();
+            System.out.println(Translator.translate(fromLang, toLang, s));
         } catch (IOException e) {
             System.out.println("Can not insert from file !");
         }
