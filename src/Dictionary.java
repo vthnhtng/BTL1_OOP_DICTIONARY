@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Dictionary {
     public List<Word> wordList = new ArrayList<>();
+    public List<Word> Bookmark = new ArrayList<>();
     private int size;
     Dictionary() {
         size = 0;
@@ -13,7 +14,9 @@ public class Dictionary {
         wordList.add(word);
         size++;
     }
-
+    public void addBookmark(Word word) {
+        Bookmark.add(word);
+    }
     public int getSize() {
         return this.size;
     }
@@ -26,6 +29,19 @@ public class Dictionary {
                     i + 1,
                     this.wordList.get(i).getWord_target(),
                     this.wordList.get(i).getWord_explain());
+
+        }
+    }
+    public void ShowAllBookmark() {
+        System.out.format("%-5s | %-15s | %-15s\n",
+                "No.", "English", "Vietnamese");
+        int i = 0;
+        for (Word iter: Bookmark) {
+            System.out.format("%-5s | %-15s | %-15s\n",
+                    i + 1,
+                    iter.getWord_target(),
+                    iter.getWord_explain());
+            i++;
 
         }
     }

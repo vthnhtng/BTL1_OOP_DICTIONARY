@@ -1,9 +1,11 @@
 import java.util.Scanner;
 
 public class DictionaryCommandline {
+
     private DictionaryManagement dictionaryManagement = new DictionaryManagement();
     public DictionaryCommandline() {
         this.dictionaryManagement.InsertFromFile();
+        this.dictionaryManagement.InsertFromBookmark();
     }
     public void dictionaryBasic() throws Exception{
         int option;
@@ -24,6 +26,7 @@ public class DictionaryCommandline {
             }
         } while (option != 4);
         this.dictionaryManagement.exportFile();
+        this.dictionaryManagement.exportBookmark();
     }
     public void dictionaryAdvanced() throws Exception{
         int option;
@@ -33,6 +36,9 @@ public class DictionaryCommandline {
             System.out.println("1.Insert from database");
             System.out.println("2.Dictionary lookup");
             System.out.println("3.Translation");
+            System.out.println("5.EditWord");
+            System.out.println("6.DeleteWord");
+            System.out.println("7.Searcher");
             System.out.println("4.Return");
             option = sc.nextInt();
             if (option == 1) {
@@ -47,6 +53,8 @@ public class DictionaryCommandline {
                 this.dictionaryManagement.deleteWord();
             } else if (option == 7){
                 this.dictionaryManagement.dictionarySearcher();
+            }else if (option == 8){
+                this.dictionaryManagement.ShowAllBookmark();
             }
         } while(option != 4);
     }

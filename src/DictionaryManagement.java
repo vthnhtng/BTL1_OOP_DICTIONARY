@@ -7,7 +7,6 @@ import java.nio.file.Path;
 public class DictionaryManagement {
 
     private Dictionary dictionary = new Dictionary();
-
     public void insertFromCommandline() {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter number of word:");
@@ -27,24 +26,9 @@ public class DictionaryManagement {
     public void ShowAllWords() {
         this.dictionary.ShowAllWords();
     }
-
-    public void InsertFromFile() {
-        try {
-            Path path = Path.of("src\\Database.txt");
-            List<String> inputWordsList = Files.readAllLines(path);
-            for (String word : inputWordsList) {
-                String[] wordAttribute = word.split("-");
-                Word newWord = new Word();
-                newWord.setWord_target(wordAttribute[0]);
-                newWord.setWord_explain(wordAttribute[1]);
-                this.dictionary.addWord(newWord);
-            }
-            System.out.println("Inserted successfully");
-        } catch (IOException e) {
-            System.out.println("Can not insert from file !");
-        }
+    public void ShowAllBookmark() {
+        this.dictionary.ShowAllBookmark();
     }
-
     public void dictionaryLookup() {
         Scanner sc = new Scanner(System.in);
         Scanner sc1 = new Scanner(System.in);
@@ -80,12 +64,12 @@ public class DictionaryManagement {
         boolean check = false;
         while (run == 1) {
             System.out.println("Enter english word:");
-            String search = sc.next();
+            String search = sc.nextLine();
             System.out.format("%-5s | %-15s | %-15s\n",
                     "No.", "English", "Vietnamese");
             int count = 0;
             for (Word iter : this.dictionary.wordList) {
-                if (iter.getWord_target().contains(search)) {
+                if (iter.getWord_target().contains(search) ) {
                     count++;
                     check = true;
                     System.out.format("%-5s | %-15s | %-15s\n",
@@ -93,6 +77,7 @@ public class DictionaryManagement {
                             iter.getWord_target(),
                             iter.getWord_explain());
                 }
+                if(count == 5) break;
             }
             if(!check){
                 System.out.println("Not found!");
@@ -116,6 +101,10 @@ public class DictionaryManagement {
             System.out.println("Enter your word:");
             String s = sc1.nextLine();
             System.out.println(Translator.translate(fromLang, toLang, s));
+            Word newWord = new Word();
+            newWord.setWord_target(s);
+            newWord.setWord_explain(Translator.translate(fromLang, toLang, s));
+            dictionary.Bookmark.add(newWord);
         } catch (IOException e) {
             System.out.println("Can not insert from file !");
         }
@@ -154,5 +143,48 @@ public class DictionaryManagement {
         writer.flush();
         writer.close();
         System.out.println("Successful");
+    }
+    public void exportBookmark() throws IOException {
+        PrintWriter writer = null;
+        writer = new PrintWriter(new File("src\\Bookmark.txt"));
+        for (Word iter : this.dictionary.Bookmark) {
+            writer.write(iter.getWord_target() + ":" + iter.getWord_explain() + "\n");
+
+        }
+        writer.flush();
+        writer.close();
+        System.out.println("Successful");
+    }
+    public void InsertFromFile() {
+        try {
+            Path path = Path.of("src\\data.txt");
+            List<String> inputWordsList = Files.readAllLines(path);
+            for (String word : inputWordsList) {
+                String[] wordAttribute = word.split(":");
+                Word newWord = new Word();
+                newWord.setWord_target(wordAttribute[0]);
+                newWord.setWord_explain(wordAttribute[1]);
+                this.dictionary.addWord(newWord);
+            }
+            System.out.println("Inserted successfully");
+        } catch (IOException e) {
+            System.out.println("Can not insert from file !");
+        }
+    }
+    public void InsertFromBookmark() {
+        try {
+            Path path = Path.of("src\\Bookmark.txt");
+            List<String> inputWordsList = Files.readAllLines(path);
+            for (String word : inputWordsList) {
+                String[] wordAttribute = word.split(":");
+                Word newWord = new Word();
+                newWord.setWord_target(wordAttribute[0]);
+                newWord.setWord_explain(wordAttribute[1]);
+                this.dictionary.addBookmark(newWord);
+            }
+            System.out.println("Inserted successfully");
+        } catch (IOException e) {
+            System.out.println("Can not insert from file !");
+        }
     }
 }
