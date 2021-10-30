@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/BTL1_OOP_DICTIONARY-main.iml" filepath="$PROJECT_DIR$/BTL1_OOP_DICTIONARY-main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DictionaryApplication.iml" filepath="$PROJECT_DIR$/DictionaryApplication.iml" />
     </modules>
   </component>
 </project>

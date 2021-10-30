@@ -1,11 +1,11 @@
-module com.example.demojava {
+module com.example.dictionaryapplication {
     requires javafx.controls;
     requires javafx.fxml;
 
     requires org.controlsfx.controls;
     requires com.dlsc.formsfx;
     requires org.kordamp.bootstrapfx.core;
-   // opens hellofx to javafx.graphics;
-    opens com.example.demojava to javafx.fxml;
-    exports com.example.demojava;
+
+    opens com.example.dictionaryapplication to javafx.fxml;
+    exports com.example.dictionaryapplication;
 }
