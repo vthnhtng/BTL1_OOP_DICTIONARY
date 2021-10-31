@@ -154,7 +154,7 @@
         </TextArea>
         <TextArea fx:id="enWord" layoutX="224.0" layoutY="98.0" prefHeight="131.0" prefWidth="612.0" style="-fx-control-inner-background: #778899;">
             <font>
-                <Font size="22.0" />
+                <Font name="Comic Sans MS" size="22.0" />
             </font>
         </TextArea>
         <ImageView fitHeight="58.0" fitWidth="80.0" layoutX="224.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">

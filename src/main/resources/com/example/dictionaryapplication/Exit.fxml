@@ -1,22 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.effect.Blend?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.Region?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Circle?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="587.0" prefWidth="938.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionaryapplication.Controller">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="587.0" prefWidth="938.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionaryapplication.Controller">
     <children>
         <Region layoutY="22.0" prefHeight="565.0" prefWidth="198.0" style="-fx-background-color: #374850;" />
         <Circle fill="WHITE" layoutX="99.0" layoutY="120.0" radius="33.0" stroke="BLACK" strokeType="INSIDE" />
-        <Region layoutX="-75.0" layoutY="-2.0" prefHeight="39.0" prefWidth="938.0" style="-fx-background-color: #0f2028;" />
+        <Region layoutY="-1.0" prefHeight="39.0" prefWidth="938.0" style="-fx-background-color: #0f2028;" />
         <Text fill="WHITE" layoutX="26.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dictionary App">
             <font>
                 <Font name="Arial Bold" size="18.0" />
@@ -35,7 +31,7 @@
                 <Blend />
             </effect>
         </Button>
-        <ImageView fitHeight="555.0" fitWidth="824.0" layoutX="198.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="555.0" fitWidth="824.0" layoutX="198.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../../../image/back.png" />
             </image>
@@ -144,9 +140,9 @@
                 <Image url="@../../../image/edit.png" />
             </image>
         </ImageView>
-        <Button layoutX="469.0" layoutY="134.0" mnemonicParsing="false" onAction="#exitAlert" prefHeight="66.0" prefWidth="182.0" text="Save and Exit">
+        <Button layoutX="316.0" layoutY="120.0" mnemonicParsing="false" onAction="#exitAlert" prefHeight="87.0" prefWidth="510.0" style="-fx-background-color: #fefeff;" text="Save and Exit">
             <font>
-                <Font size="20.0" />
+                <Font name="Comic Sans MS" size="36.0" />
             </font>
         </Button>
     </children>

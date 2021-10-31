@@ -1,12 +1,1 @@
-Fix bug:Sửa lỗi
-DBRR:abc
-littedick:ccc
-aasd:sadas
-cho:give
-tôi vui:I&#39;m happy
-lazy:lười biếng
-xin chào:Hello
-chó:狗
-super idol:超级偶像
-con trai:boy
-xin chào:สวัสดี
+

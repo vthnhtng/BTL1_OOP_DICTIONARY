@@ -304,7 +304,6 @@ public class Controller implements Initializable {
             stage.setScene(scene);
             stage.show();
         }
-
     }
     @FXML
     public void lookUp(ActionEvent event) throws IOException {
