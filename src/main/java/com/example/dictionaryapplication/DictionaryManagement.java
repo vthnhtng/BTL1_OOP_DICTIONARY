@@ -252,6 +252,8 @@ public class DictionaryManagement {
             System.out.println("Bookmark is inserted successfully");
         } catch (IOException e) {
             System.out.println("Can not insert from file !");
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("No words in bookmark");
         }
     }
 }
